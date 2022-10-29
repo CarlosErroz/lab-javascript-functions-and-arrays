@@ -47,7 +47,30 @@ function sumNumbers(array) {
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+function sum(array) {
+    if (!array.length) {
+    return(0);
+  }
+  else {
+    let arraySum=0;
+    for (let i=0;i<array.length;i++) {
+      if (typeof array[i] == "number") {
+        arraySum += array[i];
+      }
+      else if (typeof array[i] == "string") {
+        arraySum += array[i].length;
+      }
+      else if (typeof array[i] == "boolean") {
+        arraySum += array[i];
+      }
+      else {
+        return("error");
+      }
+    }
+    return(arraySum);
+  }
+}
 
 
 
@@ -83,7 +106,14 @@ function averageWordLength(array) {
  }
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(array) {
+  if (!array.length) {
+    return(null);
+  }
+  else {
+    return(sum(array)/array.length);
+  }
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -120,7 +150,22 @@ function uniquifyArray(array) {
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array,word) {
+  if (!array.length) {
+    return(null);
+  }
+  let resultIfExist = 0;
+  for (let i=0; i<array.length;i++) {
+    if (array[i] === word) {
+      resultIfExist += 1;
+    }
+  }
+  if (resultIfExist>0) {
+    return(true);
+  } else {
+    return(false);
+  }
+}
 
 
 
