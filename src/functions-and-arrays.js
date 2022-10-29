@@ -1,20 +1,49 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
-
+function maxOfTwoNumbers() {
+  if (arguments[0]>arguments[1]) {
+    return(arguments[0])
+  }
+  else if (arguments[0]<arguments[1]) {
+    return(arguments[1])
+  }
+  else return(arguments[0],arguments[1])
+}
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
-
+function findLongestWord(array) {
+  if (!array.length) {
+    return(null);
+  }
+  else {
+    let longestWord = array[0];
+    for (let i=1; i<array.length; i++) {
+      if (array[i].length>longestWord.length) {
+        longestWord = array[i];
+      }
+    }
+    return(longestWord);
+  }
+}
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
-
+function sumNumbers(array) {
+  if (!array.length) {
+    return(0);
+  }
+  else {
+    let arraySum=0;
+    for (let i=0;i<array.length;i++) {
+      arraySum += array[i];
+    }
+    return(arraySum);
+  }
+}
 
 
 // Iteration #3.1 Bonus:
@@ -26,13 +55,32 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(array) {
+  if (!array.length) {
+    return(null);
+  }
+  else {
+    return(sumNumbers(array)/array.length);
+}
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(array) {
+  if (!array.length) {
+    return(null);
+  }
+  else {
+    let arrayLengthSum = 0;
+    for (let i=0;i<array.length;i++) {
+      arrayLengthSum += array[i].length;
+    }
+    return(arrayLengthSum/array.length);
+}
+
+ }
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,7 +100,20 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  if (!array.length) {
+    return(null);
+  }
+  else {
+    let uniqueArray = [];
+    for (let i=0; i<array.length;i++) {
+      if (!uniqueArray.includes(array[i])) {
+        uniqueArray.push(array[i]);
+      }
+    }
+    return(uniqueArray);
+  }
+}
 
 
 
