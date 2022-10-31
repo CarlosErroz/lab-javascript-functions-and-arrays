@@ -65,7 +65,7 @@ function sum(array) {
         arraySum += array[i];
       }
       else {
-        return("error");
+        return(Error());
       }
     }
     return(arraySum);
@@ -184,7 +184,18 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+  if (!array.length) {
+    return(0);
+  }
+  let resultIfExist = 0;
+  for (let i=0; i<array.length;i++) {
+    if (array[i] === word) {
+      resultIfExist += 1;
+    }
+  }
+  return(resultIfExist);
+}
 
 
 
